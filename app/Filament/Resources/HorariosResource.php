@@ -52,7 +52,8 @@ class HorariosResource extends Resource
                     'Miercoles' => 'Miercoles',
                     'Jueves' => 'Jueves',
                     'Viernes'=>'Viernes',
-                ])->required()->unique()->validationMessages([
+                ])->required()->unique(ignoreRecord:true)
+                ->validationMessages([
                     'unique' => 'El día ya fue registrado',
                     'required'=>'Seleciona el día',
                 ]),
